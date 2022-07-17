@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+.App {
+    overflow-x: hidden;
+}
+
+.error-box {
+    background-color: rgb(255, 237, 237);
+    border: 1px solid red;
+    border-radius: .25rem;
+    padding: 1rem;
+}
+
+.poppins {
+    font-family: "Poppins";
+}
+
+.pointer {
+    cursor: pointer;
+}

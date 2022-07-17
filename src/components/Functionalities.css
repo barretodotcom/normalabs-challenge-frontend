@@ -1,0 +1,88 @@
+.func-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.text-size-func {
+    font-size: 1.25rem;
+}
+
+.how-works-container {
+    margin-top: 3%;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.labels-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.index {
+    margin-bottom: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: 2%;
+}
+
+.main-label {
+    font-family: 'Poppins';
+    font-size: 3rem;
+}
+
+.explanation {
+    font-weight: 200;
+    color: #303030;
+    font-size: 1.75rem;
+}
+
+.rocket-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rocket-icon {
+    font-size: 35rem;
+}
+
+.little-font {
+    font-weight: 200;
+    font-size: 1rem;
+}
+
+.entity {
+    margin-bottom: 2%;
+}
+
+.start {
+    font-size: 4rem;
+}
+
+@media (max-width:650px) {
+    .explanation {
+        font-size: 1rem;
+    }
+
+    .rocket-container {
+        display: none;
+    }
+}

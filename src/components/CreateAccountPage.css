@@ -1,0 +1,87 @@
+.create-account-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: 3%;
+}
+
+.create-account-form {
+    border: 1px solid black;
+    display: flex;
+    border-radius: .25rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 40%;
+    height: 75%;
+    box-shadow: 10px 10px 0px 0px #e88300;
+}
+
+.form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-account-inputs-form {
+    margin-top: 5.75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.form-label {
+    width: 100%;
+}
+
+.input-create-account {
+    box-sizing: border-box;
+    outline: none;
+    outline-style: none;
+    width: 100%;
+    height: 3rem;
+    padding: 1rem;
+    font-size: 1rem;
+    border: none;
+    background-color: #f3f3f3;
+}
+
+.input-create-account:focus {
+    border-bottom: 1.5px solid black;
+}
+
+.button-create-account-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-block: 5%;
+}
+
+.button-create-account {
+    background-color: #ff9000;
+    color: white;
+    padding: 1rem;
+    width: 30%;
+    text-align: center;
+    border-radius: .1rem;
+}
+
+.position-selector {
+    background-image: url("../assets/arrow-dropdown.png");
+    background-repeat: no-repeat;
+    background-position-x: 98%;
+    background-position-y: 50%;
+}
+
+@media (max-width:650px) {
+    .create-account-form {
+        width: 85%;
+    }
+}
