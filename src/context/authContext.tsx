@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api, API_URL } from "../services/api";
-import { ICreateServiceDesk, ServiceDesk } from "../services/ServiceDesk";
+import { ICreateServiceDesk, IDeleteServiceDesk, ServiceDesk } from "../services/ServiceDesk";
 import { ISession, ISignUpUser, UserService } from "../services/UserService";
 
 interface IUser {
@@ -14,7 +14,8 @@ interface IUser {
     error: string | undefined;
     loading: boolean;
     sucessMessage: string | undefined;
-    createServiceDesk: ({ title, details, initialDate, finalDate }: ICreateServiceDesk) => Promise<void>
+    createServiceDesk: ({ title, details, initialDate, finalDate }: ICreateServiceDesk) => Promise<void>;
+    deleteServiceDesk: ({ serviceDeskId, reason }: IDeleteServiceDesk) => Promise<void>
 }
 
 export const AuthContext = createContext({} as IUser);
@@ -34,20 +35,24 @@ export const AuthProvider: React.FC<Props> = ({ children }: Props) => {
     const [error, setError] = useState<string>();
     const [sucessMessage, setSucessMessage] = useState<string>();
     const [serviceDesk, setServiceDesk] = useState<object[] | undefined>();
+    const [paychecks, setPaychecks] = useState<object[] | undefined>();
 
     useEffect(() => {
-        const user = JSON.parse(localStorage.getItem("user") as string);
-        const token = localStorage.getItem("token");
+        async function refreshUserDatas() {
+            const user = JSON.parse(localStorage.getItem("user") as string);
+            const token = localStorage.getItem("token");
 
-        if (user && token) {
-            api.defaults.headers.common['authorization'] = `Bearer ${token}`;
-            setUser(user);
-            setToken(token);
-            setAvatar(`${API_URL}/files/${user.avatar}`);
-            setServiceDesk(user.serviceDesk);
-            return;
+            if (user && token) {
+                api.defaults.headers.common['authorization'] = `Bearer ${token}`;
+                setUser(user);
+                setToken(token);
+                setAvatar(`${API_URL}/files/${user.avatar}`);
+                await refreshServiceDesk(user.id)
+                return;
+            }
+            navigate("/")
         }
-        navigate("/home")
+        refreshUserDatas();
     }, [])
 
     async function signIn({ email, password }: ISession) {
@@ -130,8 +135,40 @@ export const AuthProvider: React.FC<Props> = ({ children }: Props) => {
 
     }
 
+    async function deleteServiceDesk({ serviceDeskId, reason }: IDeleteServiceDesk): Promise<void> {
+
+        try {
+            const response = await ServiceDesk.delete({ serviceDeskId, reason });
+            setSucessMessage(response.data.message);
+            await refreshServiceDesk(user.id);
+            setTimeout(() => {
+                setSucessMessage(undefined)
+            }, 2000);
+        } catch (err: any) {
+            if (err.response) {
+                setError(err.response.data.message);
+                return;
+            }
+            setError("Erro interno! Estamos trabalhando nisso.")
+        }
+    }
+
+    async function refreshServiceDesk(userId: string) {
+        try {
+            const response = await UserService.findUserById(userId);
+            setServiceDesk(response.data.serviceDesk);
+        } catch (err: any) {
+            if (err.response) {
+                setError(err.response.data.message);
+                return;
+            }
+            console.log(err)
+            setError("Erro interno! Estamos trabalhando nisso.");
+        }
+    }
+
     return (
-        <AuthContext.Provider value={{ loading, user: user, avatar, signIn, signUp, signOut, createServiceDesk, error, serviceDesk, sucessMessage }}>
+        <AuthContext.Provider value={{ loading, user: user, avatar, signIn, signUp, signOut, createServiceDesk, deleteServiceDesk, error, serviceDesk, sucessMessage }}>
             {children}
         </AuthContext.Provider>
     )

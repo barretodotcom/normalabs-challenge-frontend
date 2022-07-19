@@ -4,7 +4,7 @@ import "./LoginPage.css"
 
 export default function LoginPage() {
 
-    const { signIn, loginError } = useContext(AuthContext);
+    const { signIn } = useContext(AuthContext);
 
     const [email, setEmail] = useState<string>();
     const [password, setPassword] = useState<string>();

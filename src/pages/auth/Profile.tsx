@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import Card from '../../components/Card';
 import TaskCard from '../../components/TaskCard';
@@ -7,10 +7,12 @@ import { AuthContext } from '../../context/authContext';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md'
 
 import './Profile.css'
+import DeleteTaskBox from '../../components/DeleteTaskBox';
 
 export default function Profile() {
 
     const { user, signOut, serviceDesk } = useContext(AuthContext);
+    const [deletedServiceDesk, setDeletedServiceDesk] = useState(undefined);
     const navigate = useNavigate();
 
     if (!user) {
@@ -41,7 +43,7 @@ export default function Profile() {
                 <Card />
                 <Tasks />
             </div>
-            {(serviceDesk as []).length > 0 ?
+            {serviceDesk && (serviceDesk as []).length > 0 ?
                 <div className='profile-all-tasks'>
                     <div className='profile-all-tasks-title'>
                         <h1 className='poppins'>Todas as suas tarefas:</h1>
@@ -52,7 +54,7 @@ export default function Profile() {
                         </div>
                         <div id="slider" className='profile-all-tasks-list'>
                             {serviceDesk?.reverse().map((element, index) => (
-                                <TaskCard key={index} oneServiceDesk={element} />
+                                <TaskCard setDeletedServiceDesk={setDeletedServiceDesk} key={index} oneServiceDesk={element} />
                             ))}
                         </div>
                         <div className='clicker'>
@@ -62,6 +64,7 @@ export default function Profile() {
 
                 </div> : null
             }
+            <DeleteTaskBox setDeletedServiceDesk={setDeletedServiceDesk} deletedServiceDesk={deletedServiceDesk} />
 
         </div>
     )

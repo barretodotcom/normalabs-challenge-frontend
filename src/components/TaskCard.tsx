@@ -1,16 +1,17 @@
-import { useContext } from 'react';
+import React, { Dispatch, useContext } from 'react';
 import { AuthContext } from '../context/authContext';
 import { FaTasks } from 'react-icons/fa';
 import { BsPencilFill } from 'react-icons/bs';
-import { AiOutlineClockCircle } from 'react-icons/ai';
+import { AiFillDelete, AiOutlineClockCircle } from 'react-icons/ai';
 import { GiConfirmed } from 'react-icons/gi'
 import './TaskCard.css';
 
 interface ITaskCard {
     oneServiceDesk: any;
+    setDeletedServiceDesk: Dispatch<React.SetStateAction<any>>;
 }
 
-export default function TaskCard({ oneServiceDesk }: ITaskCard) {
+export default function TaskCard({ oneServiceDesk, setDeletedServiceDesk }: ITaskCard) {
 
     const { serviceDesk } = useContext(AuthContext)
 
@@ -24,7 +25,7 @@ export default function TaskCard({ oneServiceDesk }: ITaskCard) {
         <div style={{ borderTop: `3.5px solid ${serviceStatusColor}` }} className="task-card-container card-shadow">
             <div className='task-card-container-card-title'>
                 <h1 className='poppins'>Tarefa Nº {(serviceDesk?.indexOf(oneServiceDesk) as number) + 1}</h1>
-                <FaTasks className='task-card-container-card-title-icon' />
+                <AiFillDelete cursor={"pointer"} onClick={() => setDeletedServiceDesk(oneServiceDesk)} className='task-card-container-card-title-icon' />
             </div>
 
             <div className="task-card-container-card-title">
@@ -73,6 +74,7 @@ export default function TaskCard({ oneServiceDesk }: ITaskCard) {
                             <AiOutlineClockCircle /> : <GiConfirmed />
                         }
                     </button>
+
                 </div>
                 <BsPencilFill className='task-card-container-card-title-icon' />
             </div>

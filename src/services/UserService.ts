@@ -40,7 +40,12 @@ export class UserService {
     }
 
     static async findUserAvatar(avatarFilePath: string) {
-
         return `${API_URL}/files/${avatarFilePath}`;
+    }
+
+    static async findUserById(userId: string) {
+        const response = await api.get(`${API_URL}/users/findone/${userId}`);
+        console.log(response)
+        return response;
     }
 }

@@ -1,0 +1,64 @@
+.delete-task-box-container {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(0, 0, 0, 0.7);
+    position: fixed;
+    bottom: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-task-box-white-box {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    height: 60%;
+    background-color: white;
+    border-radius: .4rem;
+}
+
+.delete-task-box-white-box-title {
+    font-size: 2rem;
+}
+
+.delete-task-box-white-box-sure {
+    width: 100%;
+    display: flex;
+    margin-top: 10%;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.elete-task-box-white-box-sure-button {
+    width: 20%;
+}
+
+.delete-task-box-white-box-textarea-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-task-box-white-box-textarea-container button {
+    margin-top: 3%;
+    border-width: 2px;
+}
+
+.delete-task-box-white-box-textarea {
+    width: 100%;
+    height: 50%;
+}
+
+
+@media (max-width:650px) {
+    .delete-task-box-white-box {
+        height: 70%;
+        width: 90%;
+    }
+}

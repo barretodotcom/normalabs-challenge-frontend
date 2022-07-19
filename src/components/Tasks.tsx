@@ -10,11 +10,7 @@ export default function Tasks() {
 
     return (
         <div className='tasks-container'>
-            {user.serviceDesk.length ?
-                <TaskCard oneServiceDesk={user.serviceDesk[user.serviceDesk.length - 1]} />
-                :
-                <CreateTask />
-            }
+            <CreateTask />
         </div>
     )
 }
