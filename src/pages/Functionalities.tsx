@@ -3,6 +3,7 @@ import { IoMdRocket } from "react-icons/io";
 import { BsCardList, BsFillPersonFill } from 'react-icons/bs'
 import { FaMoneyCheckAlt, FaUserTie } from 'react-icons/fa';
 import { MdStickyNote2 } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 export default function Funcionabillities() {
     return (
@@ -81,7 +82,7 @@ export default function Funcionabillities() {
                         </div>
 
                         <div>
-                            <p className='poppins start'>Então, para começar, crie sua conta!</p>
+                            <p className='poppins start'>Então, para começar, <Link to="/create-account" className='create-account-link'>crie sua conta!</Link></p>
                         </div>
                     </div>
                 </div>

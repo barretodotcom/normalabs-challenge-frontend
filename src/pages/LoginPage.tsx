@@ -18,11 +18,6 @@ export default function LoginPage() {
 
             <div className="login-form">
                 <p className="poppins login-title">Faça login</p>
-                {loginError &&
-                    <div className="error-box">
-                        <p>{loginError}</p>
-                    </div>
-                }
                 <div className="inputs-form">
                     <div className="input-container">
                         <p className="poppins">Email</p>

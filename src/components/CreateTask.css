@@ -1,0 +1,69 @@
+.create-task-container {
+    width: 90%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+    padding-inline: 3rem;
+    background-color: #ffffff;
+    border-radius: .4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.create-task-container-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(44, 44, 44);
+}
+
+.create-task-container-inputs-container {
+    width: 100%;
+}
+
+.create-task-container-input-date {
+    width: 90%;
+    display: flex;
+    margin-top: 1rem;
+    flex-direction: column;
+}
+
+.create-task-container-inputs-button {
+    margin-top: 1rem;
+    background-color: #ff9000;
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: .4rem;
+    padding: .5rem;
+}
+
+.create-task-container-inputs-button:hover {
+    background-color: #ed8600;
+    transition: 500ms;
+    cursor: pointer;
+}
+
+
+.create-task-button-label {
+    color: rgb(243, 243, 243);
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    height: 1.8rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.create-task-button-label::after {
+    content: "";
+    background-color: #6d3e00;
+    height: 100%;
+    width: 1px;
+}
+
+.create-task-button-arrow-icon {
+    font-size: 2rem;
+    color: rgb(243, 243, 243);
+}

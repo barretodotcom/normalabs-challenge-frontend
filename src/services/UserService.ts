@@ -13,6 +13,7 @@ export interface ISignUpUser {
     position: string | undefined;
     accountNumber: string | undefined;
     cpf: string | undefined;
+    formData: FormData;
 }
 
 export class UserService {
@@ -23,9 +24,23 @@ export class UserService {
         return response;
     }
 
-    static async signUp({ name, email, password, position, accountNumber, cpf }: ISignUpUser) {
-        const response = await api.post(`${API_URL}/users/create`, { name, email, password, position, accountNumber, cpf });
+    static async signUp({ name, email, password, position, accountNumber, cpf, formData }: ISignUpUser) {
+
+        const userJson = JSON.stringify({ name, email, password, position, accountNumber, cpf });
+
+        const blob = new Blob([userJson], {
+            type: 'application/json'
+        });
+
+        formData.append('user', userJson);
+
+        const response = await api.post(`${API_URL}/users/create`, formData);
 
         return response;
+    }
+
+    static async findUserAvatar(avatarFilePath: string) {
+
+        return `${API_URL}/files/${avatarFilePath}`;
     }
 }

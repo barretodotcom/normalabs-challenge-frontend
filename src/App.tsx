@@ -1,20 +1,21 @@
 import { useState } from 'react'
 import './index.css'
 import Header from './components/Header'
-import Home from './components/Home'
 import RouterContainer from './router/RouterContainer'
-import { AuthProvider } from './context/authContext'
+import { AuthContext, AuthProvider } from './context/authContext'
+import MessageBox from './components/MessageBox'
+import { useContext } from 'react'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <AuthProvider>
-      <div className="App">
+    <div className="App">
+      <AuthProvider>
         <Header />
         <RouterContainer />
-      </div>
-    </AuthProvider>
+        <MessageBox />
+      </AuthProvider>
+    </div>
   )
 }
 

@@ -86,3 +86,8 @@
         display: none;
     }
 }
+
+.create-account-link {
+    cursor: pointer;
+    text-decoration: underline;
+}

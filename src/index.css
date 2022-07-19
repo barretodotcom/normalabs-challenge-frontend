@@ -19,6 +19,15 @@
     border: 1px solid red;
     border-radius: .25rem;
     padding: 1rem;
+    color: rgb(175, 58, 58);
+}
+
+.sucess-box {
+    background-color: rgb(233, 255, 233);
+    border: 1px solid rgb(92, 209, 69);
+    border-radius: .25rem;
+    padding: 1rem;
+    color: rgb(29, 140, 64);
 }
 
 .poppins {

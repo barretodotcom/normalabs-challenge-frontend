@@ -1,10 +1,15 @@
+import { useContext } from 'react';
 import { useRoutes } from 'react-router-dom';
-import CreateAccountPage from '../components/CreateAccountPage';
-import Funcionabillities from '../components/functionalities';
-import Home from '../components/Home'
-import LoginPage from '../components/LoginPage';
+import { AuthContext } from '../context/authContext';
+import Profile from '../pages/auth/Profile';
+import CreateAccountPage from '../pages/CreateAccountPage';
+import Funcionabillities from '../pages/Functionalities';
+import Home from '../pages/Home'
+import LoginPage from '../pages/LoginPage';
 
 export default function RouterContainer() {
+
+    const { user } = useContext(AuthContext);
 
     const startRoutes = {
         path: "/",
@@ -22,15 +27,16 @@ export default function RouterContainer() {
         path: "/funcionabillities",
         element: <Funcionabillities />,
     };
-    // const myRecipes = {
-    //     path: "/recipes",
-    //     element: <RecipesPage />,
-    // };
+    const profile = {
+        path: "/profile",
+        element: <Profile />,
+    };
     const routing = useRoutes([
         startRoutes,
         funcRoutes,
         loginRoute,
-        createAccountRoute
+        createAccountRoute,
+        profile
     ]);
 
     return (

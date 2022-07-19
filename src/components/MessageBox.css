@@ -1,0 +1,13 @@
+.error-message {
+    position: fixed;
+    bottom: 2%;
+    left: 45%;
+    transition: 1000ms;
+}
+
+.sucess-message {
+    position: fixed;
+    bottom: 2%;
+    left: 45%;
+    transition: 1000ms;
+}

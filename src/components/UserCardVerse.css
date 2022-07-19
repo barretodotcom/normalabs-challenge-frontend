@@ -1,0 +1,26 @@
+.card-verse-container {
+    border: 1px solid black;
+    width: 90%;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10%;
+    padding-left: .4rem;
+}
+
+.main-label-verse {
+    width: 100%;
+    font-size: .75rem;
+    font-weight: 300;
+    text-align: left;
+}
+
+.card-verse-data {
+    overflow: hidden;
+    width: 100%;
+    font-size: .8rem;
+    font-weight: bold;
+    text-align: left;
+}

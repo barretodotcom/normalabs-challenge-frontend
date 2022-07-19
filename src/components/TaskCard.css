@@ -1,0 +1,62 @@
+.task-card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    min-width: 60vh;
+    margin-right: 4rem;
+    box-sizing: border-box;
+    padding: 1rem;
+    padding-inline: 3rem;
+    border-radius: .4rem;
+}
+
+.task-card-container:hover {
+    transform: scale(1.01);
+    transition: 300ms;
+}
+
+.task-card-container-label {
+    margin-top: 1rem;
+}
+
+.task-card-container-label-title {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.task-card-container-card-title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.task-card-container-card-title h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.task-card-container-card-title-icon {
+    font-size: 2.3rem;
+    margin-right: 1rem;
+    color: rgb(255, 165, 47);
+}
+
+.task-card-container-card-title-labels {
+    font-size: 1.35rem;
+    width: 50%;
+}
+
+.task-card-container-label-bold {
+    font-size: 1.5rem;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 1rem;
+    padding-block: .3rem;
+    border-radius: .4rem;
+    width: 60%;
+}

@@ -1,0 +1,137 @@
+.user-card-container {
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-around;
+}
+
+.card-logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-logo {
+    width: 25%;
+}
+
+.card-shadow {
+    box-shadow: 10px 10px 0px 0px rgba(218, 109, 0, 0.919);
+}
+
+.profile-picture-container {
+    overflow: hidden;
+    border-radius: .4rem;
+    width: 45%;
+    height: 55vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+}
+
+.front-infos-container {
+    display: flex;
+    height: 90%;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-logo-container-title {
+    font-weight: bold;
+    margin-top: 3%;
+    font-size: 1.5rem;
+    color: #ff9000
+}
+
+.user-avatar {
+    width: 50%;
+    border-radius: .25rem;
+    margin-bottom: 5%;
+}
+
+.user-avatar-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-avatar-container::after {
+    width: 70%;
+    margin-bottom: 10%;
+    content: "";
+    height: 2px;
+    background-color: rgb(34, 34, 163);
+}
+
+.user-infos-container {
+    box-sizing: border-box;
+    border-radius: .4rem;
+    width: 45%;
+    height: 55vh;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-infos-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10%;
+}
+
+.card-front-info {
+    text-align: center;
+    font-family: 'Poppins';
+}
+
+.card-front-title {
+    color: #ff9000;
+    font-weight: bold;
+}
+
+.verse-reg-container {
+    width: 90%;
+}
+
+.verse-reg {
+    font-size: .70rem;
+    font-weight: bold;
+}
+
+.info {
+    border-bottom: 2px solid black;
+}
+
+@media (max-width:650px) {
+    .user-card-container {
+        width: 100%;
+    }
+
+    .profile-picture-container {
+        width: 90%;
+        margin-bottom: 10%;
+        height: 80vh;
+    }
+
+    .front-infos-container {
+        width: 100%;
+
+    }
+
+    .user-infos-container {
+        width: 90%;
+        height: 80vh;
+    }
+}
