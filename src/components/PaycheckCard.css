@@ -19,6 +19,12 @@
     justify-content: space-between;
 }
 
+.download-button {
+    cursor: pointer;
+    color: white;
+    background-color: black;
+}
+
 .paycheck-card-container-header-item {
     display: flex;
     flex-direction: column;

@@ -13,7 +13,6 @@ export default function Profile() {
 
     const { user, signOut, serviceDesk } = useContext(AuthContext);
     const [deletedServiceDesk, setDeletedServiceDesk] = useState(undefined);
-    const navigate = useNavigate();
 
     if (!user) {
         return (
@@ -26,7 +25,6 @@ export default function Profile() {
     function slideLeft() {
         let slider = document.getElementById("slider") as HTMLElement;
         slider.scrollLeft = slider.scrollLeft - 500;
-        console.log(slider)
     }
 
     function slideRight() {

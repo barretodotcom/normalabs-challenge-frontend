@@ -4,6 +4,7 @@ import { AuthContext } from '../context/authContext';
 import './PaycheckCard.css'
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import { IoMdDownload } from 'react-icons/io';
 interface IPaycheckCard {
     singlePaycheck: any;
 }
@@ -24,7 +25,7 @@ export default function PaycheckCard({ singlePaycheck }: IPaycheckCard) {
             .then((canvas) => {
                 const imgData = canvas.toDataURL('image/png');
                 const pdf = new jsPDF();
-                pdf.addImage(imgData, 'JPEG', 0, 0, -200, 0);
+                pdf.addImage(imgData, 'JPEG', 0, 0, -120, 0);
                 // pdf.output('dataurlnewwindow');
                 pdf.save("download.pdf");
             })
@@ -34,6 +35,7 @@ export default function PaycheckCard({ singlePaycheck }: IPaycheckCard) {
     return (
         <div id={singlePaycheck.id} className="paycheck-card-container">
             <p onClick={() => printDocument()}>Download</p>
+            <IoMdDownload className='download-button' onClick={() => printDocument()} />
             <div className='paycheck-card-container-header'>
                 <div className='paycheck-card-container-header-item'>
                     <p>{singlePaycheck.companyName}</p>
@@ -93,7 +95,7 @@ export default function PaycheckCard({ singlePaycheck }: IPaycheckCard) {
             <div className='liquid-value'>
                 <div className='liquid-value-data'>
                     <p>Valor líquido: </p>
-                    <p>R${singlePaycheck.money}</p>
+                    <p>R${money}</p>
                 </div>
             </div>
         </div>
