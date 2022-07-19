@@ -1,0 +1,88 @@
+.paychecks-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ff9000;
+    padding: 4.5rem;
+}
+
+.paychecks-container-title-container {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#slider {
+    white-space: nowrap;
+}
+
+#slider::-webkit-scrollbar {
+    display: none;
+}
+
+.paychecks-container-title-paycheck-list {
+    position: relative;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    align-items: center;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+}
+
+.paychecks-container-title {
+    width: 50%;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: rgb(251, 251, 251);
+}
+
+.paychecks-container-title-button {
+    box-shadow: 5px 5px 0px 0px #633f11;
+    display: flex;
+    margin-top: 2.5rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: #ffb553;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    border: none;
+    height: 4rem;
+    border-radius: .4rem;
+    font-size: 1rem;
+}
+
+.paychecks-container-title {
+    width: 100%;
+}
+
+.paychecks-container-instructions {
+    width: 50%;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 2rem;
+}
+
+.paychecks-container-generator {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+strong {
+    color: black;
+    text-decoration: underline;
+}
+
+@media (max-width:650px) {
+    .paychecks-container-title {
+        font-size: 1rem;
+    }
+
+}

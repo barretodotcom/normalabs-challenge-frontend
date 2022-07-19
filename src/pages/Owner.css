@@ -1,0 +1,55 @@
+.owner-container {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2rem;
+    min-height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    background-color: #ff9000;
+}
+
+.owner-container-main-box {
+    width: 34%;
+    height: 80%;
+    box-sizing: border-box;
+    box-shadow: 3px 3px 5px 0px black;
+    padding: 2.5rem;
+    border-radius: .4rem;
+    background-color: white;
+}
+
+.owner-container-main-box-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(40, 40, 40);
+}
+
+.owner-button {
+    font-weight: bold;
+    border: none;
+    width: 24%;
+    height: 3rem;
+    border-radius: .4rem;
+    margin-top: 1.5rem;
+}
+
+.owner-button-login {
+    background-color: white;
+    color: #ff9000;
+    border: 2px solid #ff9000;
+}
+
+.owner-button-create-account {
+    background-color: #ff9000;
+    color: white;
+}
+
+@media (max-width:650px) {
+    .owner-container-main-box {
+        width: 90%;
+        margin-bottom: 2rem;
+    }
+}

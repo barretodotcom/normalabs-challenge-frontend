@@ -52,11 +52,13 @@ export default function Profile() {
                         <div className='clicker' >
                             <MdChevronLeft cursor={"pointer"} onClick={slideLeft} size={40} />
                         </div>
+
                         <div id="slider" className='profile-all-tasks-list'>
                             {serviceDesk?.reverse().map((element, index) => (
                                 <TaskCard setDeletedServiceDesk={setDeletedServiceDesk} key={index} oneServiceDesk={element} />
                             ))}
                         </div>
+
                         <div className='clicker'>
                             <MdChevronRight cursor={"pointer"} onClick={slideRight} size={40} />
                         </div>

@@ -1,0 +1,76 @@
+.paycheck-card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    border: 4px solid black;
+    min-width: 60vh;
+    margin-right: 4rem;
+    box-sizing: border-box;
+    padding: 1rem;
+    padding-inline-start: 3rem;
+    border-radius: .4rem;
+}
+
+.paycheck-card-container-header {
+    border-bottom: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.paycheck-card-container-header-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.paycheck-card-container-user-infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.paycheck-card-container-funcionary-infos {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.paycheck-card-container-funcionary-infos div {
+    border: 2px solid black;
+    width: 25%;
+}
+
+.paycheck-card-container-paycheck-infos {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.paycheck-card-container-paycheck-infos-data {
+    text-align: center;
+    height: 55vh;
+    border: 4px solid black;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+.paycheck-info-header {
+    border-bottom: 2px solid black;
+}
+
+.liquid-value {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.liquid-value-data p {
+    border: 2.5px solid black;
+}

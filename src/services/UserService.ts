@@ -45,7 +45,13 @@ export class UserService {
 
     static async findUserById(userId: string) {
         const response = await api.get(`${API_URL}/users/findone/${userId}`);
-        console.log(response)
+
+        return response;
+    }
+
+    static async findAll() {
+        const response = await api.get(`${API_URL}/users/list`);
+
         return response;
     }
 }

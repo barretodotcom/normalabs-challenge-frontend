@@ -19,6 +19,7 @@ export default function Header() {
                         <img className='logo' src={logo} />
                     </div>
                     <p className='poppins pointer'><Link to="/profile">PERFIL</Link></p>
+                    <p className='poppins pointer'><Link to="/paychecks">CONTRA-CHEQUES</Link></p>
 
                     <div className='button-container-logout'>
                         <button onClick={e => signOut()} className='button logout'>

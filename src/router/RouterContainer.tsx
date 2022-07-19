@@ -1,12 +1,14 @@
 import { useContext } from 'react';
 import { useRoutes } from 'react-router-dom';
 import { AuthContext } from '../context/authContext';
+import LaunchPaycheck from '../pages/auth/LaunchPaycheck';
 import Paychecks from '../pages/auth/Paychecks';
 import Profile from '../pages/auth/Profile';
 import CreateAccountPage from '../pages/CreateAccountPage';
 import Funcionabillities from '../pages/Functionalities';
 import Home from '../pages/Home'
 import LoginPage from '../pages/LoginPage';
+import Owner from '../pages/Owner';
 
 export default function RouterContainer() {
 
@@ -35,6 +37,14 @@ export default function RouterContainer() {
     const paychecks = {
         path: "/paychecks",
         element: <Paychecks />
+    };
+    const owner = {
+        path: "/owner",
+        element: <Owner />
+    }
+    const launchPaychecks = {
+        path: "/launch-paychecks",
+        element: <LaunchPaycheck />
     }
     const routing = useRoutes([
         startRoutes,
@@ -42,7 +52,9 @@ export default function RouterContainer() {
         loginRoute,
         createAccountRoute,
         profile,
-        paychecks
+        paychecks,
+        launchPaychecks,
+        owner
     ]);
 
     return (

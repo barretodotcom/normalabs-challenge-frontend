@@ -2,9 +2,11 @@ import React, { Dispatch, useContext } from 'react';
 import { AuthContext } from '../context/authContext';
 import { FaTasks } from 'react-icons/fa';
 import { BsPencilFill } from 'react-icons/bs';
-import { AiFillDelete, AiOutlineClockCircle } from 'react-icons/ai';
+import { AiFillDelete, AiOutlineClockCircle, AiTwotoneCalendar } from 'react-icons/ai';
 import { GiConfirmed } from 'react-icons/gi'
+import { BiDetail } from 'react-icons/BI'
 import './TaskCard.css';
+import { MdDateRange } from 'react-icons/md';
 
 interface ITaskCard {
     oneServiceDesk: any;
@@ -25,7 +27,11 @@ export default function TaskCard({ oneServiceDesk, setDeletedServiceDesk }: ITas
         <div style={{ borderTop: `3.5px solid ${serviceStatusColor}` }} className="task-card-container card-shadow">
             <div className='task-card-container-card-title'>
                 <h1 className='poppins'>Tarefa Nº {(serviceDesk?.indexOf(oneServiceDesk) as number) + 1}</h1>
-                <AiFillDelete cursor={"pointer"} onClick={() => setDeletedServiceDesk(oneServiceDesk)} className='task-card-container-card-title-icon' />
+                <AiFillDelete
+                    cursor={"pointer"}
+                    onClick={() => setDeletedServiceDesk(oneServiceDesk)}
+                    className='task-card-container-card-title-icon-delete'
+                />
             </div>
 
             <div className="task-card-container-card-title">
@@ -41,7 +47,7 @@ export default function TaskCard({ oneServiceDesk, setDeletedServiceDesk }: ITas
                     <p className='poppins task-card-container-label-title'>Detalhes</p>
                     <p className='poppins task-card-container-label-bold'>{oneServiceDesk.details}</p>
                 </div>
-                <BsPencilFill className='task-card-container-card-title-icon' />
+                <BiDetail className='task-card-container-card-title-icon' />
 
             </div>
 
@@ -50,15 +56,17 @@ export default function TaskCard({ oneServiceDesk, setDeletedServiceDesk }: ITas
                     <p className='poppins task-card-container-label-title'>Data inicial</p>
                     <p className='poppins task-card-container-label-bold'>{`${initialDate.getDate().toString().padStart(2, "0")}/${(initialDate.getMonth() + 1).toString().padStart(2, "0")}/${initialDate.getFullYear()}`}</p>
                 </div>
-                <BsPencilFill className='task-card-container-card-title-icon' />
+                <MdDateRange className='task-card-container-card-title-icon' />
             </div>
 
             <div className="task-card-container-card-title">
                 <div className="task-card-container-card-title-labels">
                     <p className='poppins task-card-container-label-title'>Data final</p>
-                    <p className='poppins task-card-container-label-bold'>{`${finalDate.getDate().toString().padStart(2, "0")}/${(finalDate.getMonth() + 1).toString().padStart(2, "0")}/${finalDate.getFullYear()}`}</p>
+                    <p className='poppins task-card-container-label-bold'>
+                        {`${finalDate.getDate().toString().padStart(2, "0")}/${(finalDate.getMonth() + 1).toString().padStart(2, "0")}/${finalDate.getFullYear()}`}
+                    </p>
                 </div>
-                <BsPencilFill className='task-card-container-card-title-icon' />
+                <AiTwotoneCalendar className='task-card-container-card-title-icon' />
             </div>
 
             <div className="task-card-container-card-title">

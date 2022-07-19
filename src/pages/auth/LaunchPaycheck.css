@@ -1,0 +1,56 @@
+.launch-paycheck-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 4.5rem;
+    background-color: #ff9000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.launch-paycheck-container-title {
+    width: 50%;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2.5rem;
+    color: white;
+}
+
+table {
+    background-color: white;
+}
+
+
+.table-row-head td {
+    background-color: #0073ff;
+    padding: 12px 15px;
+    color: white;
+    border: 2.5px solid #ddd;
+}
+
+.table-row-data td {
+    text-align: center;
+    background-color: white;
+    padding: 12px 15px;
+    border: 2.5px solid #ddd;
+}
+
+
+.launch-button {
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    background-color: #586eff;
+    width: 60%;
+    height: 2rem;
+    font-weight: bold;
+    border-radius: .1rem;
+    color: white;
+}
+
+@media (max-width:650px) {
+    .launch-paycheck-container-title {
+        width: 90%;
+        font-size: 1.5rem;
+    }
+}
