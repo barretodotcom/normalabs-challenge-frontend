@@ -3,12 +3,13 @@
     flex-direction: column;
     justify-content: center;
     background-color: white;
-    min-width: 60vh;
+    width: 80%;
     margin-right: 4rem;
     box-sizing: border-box;
-    padding: 1rem;
     padding-inline-start: 3rem;
     border-radius: .4rem;
+    margin-left: 3rem;
+    margin-bottom: 4rem;
 }
 
 .task-card-container:hover {
@@ -22,7 +23,6 @@
 
 .task-card-container-label-title {
     font-weight: bold;
-    font-size: 1rem;
 }
 
 .task-card-container-card-title {
@@ -37,7 +37,6 @@
 }
 
 .task-card-container-card-title-icon {
-    font-size: 2.3rem;
     margin-right: 1rem;
     color: rgb(255, 165, 47);
     padding-block-end: .25rem;
@@ -45,12 +44,12 @@
 }
 
 .task-card-container-card-title-labels {
-    font-size: 1.35rem;
     width: 50%;
 }
 
 .task-card-container-card-title-icon-delete {
-    font-size: 2.3rem;
+    font-size: 1.5rem;
+    margin-top: .70rem;
     margin-right: 1rem;
     border-radius: .4rem;
     color: rgb(212, 35, 35);
@@ -58,9 +57,7 @@
     border: 1.5px solid rgb(212, 35, 35);
 }
 
-.task-card-container-label-bold {
-    font-size: 1.5rem;
-}
+.task-card-container-label-bold {}
 
 .status {
     display: flex;
@@ -74,4 +71,11 @@
 
 .task-card-container-card-title-labels-button {
     width: 100%;
+}
+
+@media (max-width:650px) {
+    .task-card-container {
+        width: 90vh;
+
+    }
 }

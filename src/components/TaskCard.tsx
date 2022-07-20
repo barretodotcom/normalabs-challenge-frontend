@@ -7,6 +7,7 @@ import { GiConfirmed } from 'react-icons/gi'
 import { BiDetail } from 'react-icons/BI'
 import './TaskCard.css';
 import { MdDateRange } from 'react-icons/md';
+import { IoMdTime } from 'react-icons/io';
 
 interface ITaskCard {
     oneServiceDesk: any;
@@ -19,9 +20,9 @@ export default function TaskCard({ oneServiceDesk, setDeletedServiceDesk }: ITas
 
     const initialDate = new Date(oneServiceDesk.initialDate);
     const finalDate = new Date(oneServiceDesk.finalDate);
-    const serviceStatusColor = oneServiceDesk.status.toLowerCase() == "à fazer" ? "#ffdf51" : oneServiceDesk.status.toLowerCase() == 'feito' ? "green" : "black";
-    const serviceStatusBorder = oneServiceDesk.status.toLowerCase() == "à fazer" ? "#e0b700" : oneServiceDesk.status.toLowerCase() == 'feito' ? "green" : "black";
-    const serviceStatusText = oneServiceDesk.status.toLowerCase() == "à fazer" ? "#d3ac00" : oneServiceDesk.status.toLowerCase() == 'feito' ? "green" : "black";
+    const serviceStatusColor = oneServiceDesk.status.toLowerCase() == "à fazer" ? "#ffdf51" : oneServiceDesk.status.toLowerCase() == 'feito' ? "rgb(141, 241, 118)" : "rgb(106, 163, 236)";
+    const serviceStatusBorder = oneServiceDesk.status.toLowerCase() == "à fazer" ? "#e0b700" : oneServiceDesk.status.toLowerCase() == 'feito' ? "rgb(141, 241, 118)" : "rgb(106, 163, 236)";
+    const serviceStatusText = oneServiceDesk.status.toLowerCase() == "à fazer" ? "#d3ac00" : oneServiceDesk.status.toLowerCase() == 'feito' ? "rgb(141, 241, 118)" : "rgb(106, 163, 236)";
 
     return (
         <div style={{ borderTop: `3.5px solid ${serviceStatusColor}` }} className="task-card-container card-shadow">
@@ -45,7 +46,7 @@ export default function TaskCard({ oneServiceDesk, setDeletedServiceDesk }: ITas
             <div className="task-card-container-card-title">
                 <div className="task-card-container-card-title-labels">
                     <p className='poppins task-card-container-label-title'>Detalhes</p>
-                    <p className='poppins task-card-container-label-bold'>{oneServiceDesk.details}</p>
+                    <p className='poppins task-card-container-label-bold task-card-details'>{oneServiceDesk.details}</p>
                 </div>
                 <BiDetail className='task-card-container-card-title-icon' />
 
@@ -84,7 +85,7 @@ export default function TaskCard({ oneServiceDesk, setDeletedServiceDesk }: ITas
                     </button>
 
                 </div>
-                <BsPencilFill className='task-card-container-card-title-icon' />
+                <IoMdTime className='task-card-container-card-title-icon' />
             </div>
         </div>
     )

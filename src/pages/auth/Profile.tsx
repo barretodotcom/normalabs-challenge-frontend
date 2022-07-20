@@ -8,6 +8,7 @@ import { MdChevronLeft, MdChevronRight } from 'react-icons/md'
 
 import './Profile.css'
 import DeleteTaskBox from '../../components/DeleteTaskBox';
+import TaskSliderContainer from '../../components/TasksSliderContainer';
 
 export default function Profile() {
 
@@ -47,19 +48,15 @@ export default function Profile() {
                         <h1 className='poppins'>Todas as suas tarefas:</h1>
                     </div>
                     <div className='profile-all-tasks-generator'>
-                        <div className='clicker' >
-                            <MdChevronLeft cursor={"pointer"} onClick={slideLeft} size={40} />
-                        </div>
 
-                        <div id="slider" className='profile-all-tasks-list'>
+                        <TaskSliderContainer setDeletedSeviceDesk={setDeletedServiceDesk} serviceDeskArray={serviceDesk} />
+                        {/* <div id="slider" className='profile-all-tasks-list'>
                             {serviceDesk?.reverse().map((element, index) => (
                                 <TaskCard setDeletedServiceDesk={setDeletedServiceDesk} key={index} oneServiceDesk={element} />
                             ))}
-                        </div>
+                        </div> */}
 
-                        <div className='clicker'>
-                            <MdChevronRight cursor={"pointer"} onClick={slideRight} size={40} />
-                        </div>
+
                     </div>
 
                 </div> : null

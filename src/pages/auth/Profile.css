@@ -12,7 +12,6 @@
 }
 
 .profile-container {
-    padding-block: 10%;
     background-color: #ff9000;
     display: flex;
     flex-direction: column;
@@ -32,7 +31,6 @@
 }
 
 .paycheck-service-desk {
-    padding: 10%;
     width: 45%;
     background-color: white;
 }
@@ -90,7 +88,6 @@
 
 .profile-all-tasks-list {
     width: 100%;
-    padding: 1rem;
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
