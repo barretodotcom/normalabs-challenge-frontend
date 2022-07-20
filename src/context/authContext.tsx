@@ -50,8 +50,9 @@ export const AuthProvider: React.FC<Props> = ({ children }: Props) => {
         async function refreshUserDatas() {
             const user = JSON.parse(localStorage.getItem("user") as string);
             const token = localStorage.getItem("token");
+            const userType = localStorage.getItem("type");
 
-            if (user && token) {
+            if (user && token && userType != "owner") {
                 api.defaults.headers.common['authorization'] = `Bearer ${token}`;
                 setUser(user);
                 setToken(token);
@@ -60,6 +61,7 @@ export const AuthProvider: React.FC<Props> = ({ children }: Props) => {
                 await refreshServiceDesk(user.id)
                 return;
             }
+
             setLoading(false);
         }
         refreshUserDatas();
@@ -76,6 +78,7 @@ export const AuthProvider: React.FC<Props> = ({ children }: Props) => {
 
             localStorage.setItem("user", JSON.stringify(user));
             localStorage.setItem("token", response.data.token);
+            localStorage.setItem('type', 'user')
             setUser(user);
             setAvatar(`${API_URL}/files/${user.avatar}`);
             setServiceDesk(user.serviceDesk);
@@ -102,6 +105,8 @@ export const AuthProvider: React.FC<Props> = ({ children }: Props) => {
             const user = response.data.user;
             localStorage.setItem('user', JSON.stringify(user));
             localStorage.setItem('token', response.data.token);
+            localStorage.setItem('type', 'user')
+
             setUser(user);
             setAvatar(`${API_URL}/files/${user.avatar}`);
             api.defaults.headers.common.authorization = `Bearer ${response.data.token}`;
@@ -183,8 +188,9 @@ export const AuthProvider: React.FC<Props> = ({ children }: Props) => {
             const user = response.data.owner;
             localStorage.setItem('user', JSON.stringify(user));
             localStorage.setItem('token', response.data.token);
+            localStorage.setItem('type', 'owner')
             setUser(user);
-            api.defaults.headers.common.authorization = `Bearer ${token}`;
+            api.defaults.headers.common.authorization = `Bearer ${response.data.token}`;
             navigate("/launch-paychecks");
         } catch (err: any) {
             if (err.response) {
@@ -203,9 +209,10 @@ export const AuthProvider: React.FC<Props> = ({ children }: Props) => {
             console.log(response.data)
             localStorage.setItem('user', JSON.stringify(user));
             localStorage.setItem('token', response.data.token);
+            localStorage.setItem("type", "owner")
             setUser(user);
 
-            api.defaults.headers.common.authorization = `Bearer ${token}`;
+            api.defaults.headers.common.authorization = `Bearer ${response.data.token}`;
             navigate("/launch-paychecks");
 
 

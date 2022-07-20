@@ -23,7 +23,7 @@ export default function Paychecks() {
     return (
         <div className='paychecks-container'>
             <div className='paychecks-container-title-container'>
-                <p className='paychecks-container-title poppins'>Seja bem vindo à sua aba de contra cheques, onde você pode fazer o download de seus contra-cheques.</p>
+                <p className='paychecks-container-title poppins'>Seja bem vindo à sua aba de contra cheques, onde você pode fazer o download de seus documentos de pagamento.</p>
             </div>
             {paychecks?.length ?
                 <div className='paycheck-generator-container'>
@@ -41,7 +41,7 @@ export default function Paychecks() {
                 </div>
 
                 :
-                <div>
+                <div className='paychecks-container-title-container'>
                     <p className='paychecks-container-instructions poppins'>Como você não possui contra-cheques, (essa parte eu gostei de fazer), siga para a url deste site e insira o caminho <strong onClick={() => navigate("/owner")}>'/owner'</strong>, crie uma conta e siga as instruções.</p>
                 </div>
             }

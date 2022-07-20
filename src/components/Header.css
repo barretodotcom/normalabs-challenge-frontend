@@ -19,6 +19,11 @@
     align-items: center;
 }
 
+.header-label {
+    white-space: nowrap;
+    width: 70%;
+}
+
 .navbar-auth {
     width: 100%;
     height: 100%;

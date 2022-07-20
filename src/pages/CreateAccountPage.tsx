@@ -34,7 +34,7 @@ export default function CreateAccountPage() {
 
                     <div className="create-account-inputs-form">
                         <p className="poppins form-label">Para começar, insira sua foto de perfil:</p>
-                        <input onChange={e => setAvatar(e.target.files[0])} type="file" name="avatar" formEncType="multipart/form-data" placeholder="Insira sua imagem" className="input-create-account" />
+                        <input onChange={e => e.target.files ? setAvatar(e.target.files[0]) : null} type="file" name="avatar" formEncType="multipart/form-data" placeholder="Insira sua imagem" className="input-create-account" />
                     </div>
 
                     <div className="create-account-inputs-form">

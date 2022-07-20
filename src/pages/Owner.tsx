@@ -33,7 +33,7 @@ export default function Owner() {
                 <div>
                     <p className='owner-container-main-box-title poppins'>Crie sua conta</p>
                     <CustomInput value={newEmail} setValue={setNewEmail} label="E-mail" type="email" />
-                    <CustomInput value={newPassword} setValue={setNewPassword} label="Senha" type="email" />
+                    <CustomInput value={newPassword} setValue={setNewPassword} label="Senha" type="password" />
                     <button onClick={handleCreateAccount} className='owner-button pointer owner-button-create-account'>Criar conta</button>
                 </div>
             </div>

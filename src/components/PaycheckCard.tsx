@@ -5,6 +5,7 @@ import './PaycheckCard.css'
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { IoMdDownload } from 'react-icons/io';
+
 interface IPaycheckCard {
     singlePaycheck: any;
 }
@@ -12,7 +13,6 @@ interface IPaycheckCard {
 export default function PaycheckCard({ singlePaycheck }: IPaycheckCard) {
 
     const { user, } = useContext(AuthContext);
-    console.log(user);
 
     const createdAt = new Date(singlePaycheck.createdAt);
     const userCreatedAt = new Date(user.created_at)
@@ -27,7 +27,7 @@ export default function PaycheckCard({ singlePaycheck }: IPaycheckCard) {
                 const pdf = new jsPDF();
                 pdf.addImage(imgData, 'JPEG', 0, 0, -120, 0);
                 // pdf.output('dataurlnewwindow');
-                pdf.save("download.pdf");
+                pdf.save(`Contra cheque, mês de ${createdAt.getMonth()} .pdf`);
             })
             ;
     }
