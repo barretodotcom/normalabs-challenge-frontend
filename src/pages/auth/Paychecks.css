@@ -1,4 +1,5 @@
 .paychecks-container {
+    height: 100vh;
     padding-block: 10%;
     background-color: #ff9000;
     display: flex;
@@ -7,6 +8,7 @@
 }
 
 .paychecks-container-title-container {
+    margin-bottom: 5rem;
     width: 80%;
     display: flex;
     flex-wrap: wrap;

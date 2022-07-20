@@ -42,7 +42,7 @@ export default function Paychecks() {
 
                 :
                 <div className='paychecks-container-title-container'>
-                    <p className='paychecks-container-instructions poppins'>Como você não possui contra-cheques, (essa parte eu gostei de fazer), siga para a url deste site e insira o caminho <strong onClick={() => navigate("/owner")}>'/owner'</strong>, crie uma conta e siga as instruções.</p>
+                    <p className='paychecks-container-title poppins'>Como você não possui contra-cheques, (essa parte eu gostei de fazer), siga para a url deste site e insira o caminho <strong onClick={() => navigate("/owner")}>'/owner'</strong>, crie uma conta e siga as instruções.</p>
                 </div>
             }
         </div >
