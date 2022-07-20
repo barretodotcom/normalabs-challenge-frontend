@@ -37,7 +37,6 @@ export default function Header() {
                     <div className='nav-label'>
                         <p className='poppins pointer'><Link to="/">HOME</Link></p>
                         <p className='poppins pointer'><Link to="/funcionabillities">FUNCIONALIDADES</Link></p>
-                        <p className='poppins pointer'><Link to="/about-me"> SOBRE MIM</Link></p>
                     </div>
 
                     <div className='button-container'>

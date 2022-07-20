@@ -23,12 +23,13 @@ export default function TaskCard({ oneServiceDesk, setDeletedServiceDesk }: ITas
     const finalDate = new Date(oneServiceDesk.finalDate);
     const serviceStatusColor = oneServiceDesk.status.toLowerCase() == "à fazer" ? "#ffdf51" : oneServiceDesk.status.toLowerCase() == 'feito' ? "rgb(141, 241, 118)" : "rgb(106, 163, 236)";
     const serviceStatusBorder = oneServiceDesk.status.toLowerCase() == "à fazer" ? "#e0b700" : oneServiceDesk.status.toLowerCase() == 'feito' ? "rgb(141, 241, 118)" : "rgb(106, 163, 236)";
-    const serviceStatusText = oneServiceDesk.status.toLowerCase() == "à fazer" ? "#d3ac00" : oneServiceDesk.status.toLowerCase() == 'feito' ? "rgb(141, 241, 118)" : "rgb(106, 163, 236)";
+    const serviceStatusText = oneServiceDesk.status.toLowerCase() == "à fazer" ? "#d3ac00" : oneServiceDesk.status.toLowerCase() == 'feito' ? "rgb(141, 241, 118)" : "rgb(34, 73, 122)";
     async function handlesetTaskDone(element: any, status: string) {
+        console.log(element.id)
         await setTaskStatus(element.id, status);
     }
     return (
-        <div style={{ borderTop: `3.5px solid ${serviceStatusColor}` }} className="task-card-container card-shadow">
+        <div style={{ borderTop: `3.5px solid ${serviceStatusColor}` }} className="task-card-container task-shadow">
             <div className='task-card-container-card-title'>
                 <h1 className='poppins'>Tarefa Nº {(serviceDesk?.indexOf(oneServiceDesk) as number) + 1}</h1>
                 <AiFillDelete
@@ -88,6 +89,9 @@ export default function TaskCard({ oneServiceDesk, setDeletedServiceDesk }: ITas
                     </button>
                     {oneServiceDesk.status.toLowerCase() == "fazendo" &&
                         <p onClick={() => handlesetTaskDone(oneServiceDesk.id, "Feito")} className='poppins done-button'>Marcar como feito.</p>
+                    }
+                    {oneServiceDesk.status.toLowerCase() == "à fazer" &&
+                        <p onClick={() => setTaskStatus(oneServiceDesk.id, "Fazendo")} className='poppins done-button'>Começar tarefa.</p>
                     }
 
                 </div>

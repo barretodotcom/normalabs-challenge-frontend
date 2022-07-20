@@ -25,9 +25,7 @@ export default function TaskSliderContainer({ serviceDeskArray, setDeletedSevice
 
         serviceDeskArray?.map(async (element) => {
             const today = new Date();
-            if (isBetween(today, parseISO(element.initialDate), parseISO(element.finalDate))) {
-                await setTaskStatus(element.id, "Fazendo");
-            }
+
             if (element.status.toLowerCase() == "à fazer") {
                 toDoElements.push(element);
                 setToDo(toDoElements)
@@ -57,7 +55,7 @@ export default function TaskSliderContainer({ serviceDeskArray, setDeletedSevice
             </div>
             <div className="task-slider-tasks-group">
                 <div className="tasks-slider-tasks-group-header header-2">
-                    <p>Relizando</p>
+                    <p>Realizando</p>
                 </div>
                 <div id="slider">
                     {doing.map(element => (
