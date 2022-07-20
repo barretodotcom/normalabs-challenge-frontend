@@ -26,6 +26,11 @@ export class ServiceDesk {
             }
         });
         return response;
+    }
 
+    static async updateStatus(serviceDeskId: string, status: string) {
+        const response = await api.patch(`${API_URL}/servicesdesks/status/${serviceDeskId}`, { status });
+        console.log(response)
+        return response;
     }
 }

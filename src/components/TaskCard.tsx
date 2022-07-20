@@ -12,18 +12,21 @@ import { IoMdTime } from 'react-icons/io';
 interface ITaskCard {
     oneServiceDesk: any;
     setDeletedServiceDesk: Dispatch<React.SetStateAction<any>>;
+    setTaskDone: (taskId: string) => Promise<void>
 }
 
 export default function TaskCard({ oneServiceDesk, setDeletedServiceDesk }: ITaskCard) {
 
-    const { serviceDesk } = useContext(AuthContext)
+    const { serviceDesk, setTaskStatus } = useContext(AuthContext)
 
     const initialDate = new Date(oneServiceDesk.initialDate);
     const finalDate = new Date(oneServiceDesk.finalDate);
     const serviceStatusColor = oneServiceDesk.status.toLowerCase() == "à fazer" ? "#ffdf51" : oneServiceDesk.status.toLowerCase() == 'feito' ? "rgb(141, 241, 118)" : "rgb(106, 163, 236)";
     const serviceStatusBorder = oneServiceDesk.status.toLowerCase() == "à fazer" ? "#e0b700" : oneServiceDesk.status.toLowerCase() == 'feito' ? "rgb(141, 241, 118)" : "rgb(106, 163, 236)";
     const serviceStatusText = oneServiceDesk.status.toLowerCase() == "à fazer" ? "#d3ac00" : oneServiceDesk.status.toLowerCase() == 'feito' ? "rgb(141, 241, 118)" : "rgb(106, 163, 236)";
-
+    async function handlesetTaskDone(element: any, status: string) {
+        await setTaskStatus(element.id, status);
+    }
     return (
         <div style={{ borderTop: `3.5px solid ${serviceStatusColor}` }} className="task-card-container card-shadow">
             <div className='task-card-container-card-title'>
@@ -83,6 +86,9 @@ export default function TaskCard({ oneServiceDesk, setDeletedServiceDesk }: ITas
                             <AiOutlineClockCircle /> : <GiConfirmed />
                         }
                     </button>
+                    {oneServiceDesk.status.toLowerCase() == "fazendo" &&
+                        <p onClick={() => handlesetTaskDone(oneServiceDesk.id, "Feito")} className='poppins done-button'>Marcar como feito.</p>
+                    }
 
                 </div>
                 <IoMdTime className='task-card-container-card-title-icon' />

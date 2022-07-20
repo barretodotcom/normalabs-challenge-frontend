@@ -79,3 +79,8 @@
 
     }
 }
+
+.done-button {
+    font-size: .80rem;
+    cursor: pointer;
+}

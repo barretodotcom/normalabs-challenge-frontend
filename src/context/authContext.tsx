@@ -1,3 +1,4 @@
+import { AxiosError } from "axios";
 import React, { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api, API_URL } from "../services/api";
@@ -23,6 +24,7 @@ interface IUser {
     createPaycheck: ({ companyName, socialReason, cnpj, extraTime, accountNumber, userId }: ICreatePaycheck) => Promise<void>;
     createOwner: ({ newEmail, newPassword }: ICreateOwner) => Promise<void>;
     signInOwner: ({ email, password }: IOwner) => Promise<void>;
+    setTaskStatus: (taskId: string, status: string) => Promise<void>;
     paychecks: object[] | undefined;
 }
 
@@ -256,8 +258,24 @@ export const AuthProvider: React.FC<Props> = ({ children }: Props) => {
         }
     }
 
+    async function setTaskStatus(tasdkId: any, status: string): Promise<void> {
+        try {
+            const response = await ServiceDesk.updateStatus(tasdkId, status);
+            setSucessMessage("Tarefa atualizada com sucesso.");
+            setTimeout(() => {
+                setSucessMessage(undefined)
+            }, 2000);
+        } catch (err: any) {
+            if (err.response) {
+                setError(err.response.data.message);
+                return;
+            }
+            setError("Erro interno, estamos trabalhando nisso!");
+
+        }
+    }
     return (
-        <AuthContext.Provider value={{ loading, user: user, avatar, signIn, signUp, signOut, signInOwner, createOwner, createPaycheck, createServiceDesk, deleteServiceDesk, findAllUsers, users, error, serviceDesk, sucessMessage, paychecks }}>
+        <AuthContext.Provider value={{ loading, user: user, avatar, signIn, signUp, signOut, signInOwner, setTaskStatus, createOwner, createPaycheck, createServiceDesk, deleteServiceDesk, findAllUsers, users, error, serviceDesk, sucessMessage, paychecks }}>
             {children}
         </AuthContext.Provider>
     )
