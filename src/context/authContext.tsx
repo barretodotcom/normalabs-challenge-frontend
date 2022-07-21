@@ -177,12 +177,7 @@ export const AuthProvider: React.FC<Props> = ({ children }: Props) => {
         try {
             const response = await UserService.findUserById(userId);
             setServiceDesk(response.data.serviceDesk);
-            response.data.serviceDesk.map(async (element: any) => {
-                const today = new Date();
-                if (isBetween(today, parseISO(element.initialDate), parseISO(element.finalDate))) {
-                    await setTaskStatus(element.id, "Fazendo");
-                }
-            })
+
         } catch (err: any) {
             if (err.response) {
                 setError(err.response.data.message);
