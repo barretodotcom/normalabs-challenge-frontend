@@ -39,7 +39,7 @@ export default function TaskSliderContainer({ serviceDeskArray, setDeletedSevice
                 setDone(doneElements)
             }
         })
-    }, serviceDeskArray)
+    }, [])
 
     return (
         <div className="task-slider-container">
@@ -47,7 +47,7 @@ export default function TaskSliderContainer({ serviceDeskArray, setDeletedSevice
                 <div className="tasks-slider-tasks-group-header header-1">
                     <p>À fazer</p>
                 </div>
-                <div id="slider">
+                <div id="slider-task">
                     {toDo.map(element => (
                         <TaskCard setTaskDone={element.id} key={element.id} setDeletedServiceDesk={setDeletedSeviceDesk} oneServiceDesk={element} />
                     ))}
@@ -57,7 +57,7 @@ export default function TaskSliderContainer({ serviceDeskArray, setDeletedSevice
                 <div className="tasks-slider-tasks-group-header header-2">
                     <p>Realizando</p>
                 </div>
-                <div id="slider">
+                <div id="slider-task">
                     {doing.map(element => (
                         <TaskCard setTaskDone={element.id} key={element.id} setDeletedServiceDesk={setDeletedSeviceDesk} oneServiceDesk={element} />
                     ))}
@@ -68,7 +68,7 @@ export default function TaskSliderContainer({ serviceDeskArray, setDeletedSevice
                 <div className="tasks-slider-tasks-group-header header-3">
                     <p>Feito</p>
                 </div>
-                <div id="slider">
+                <div id="slider-task">
                     {done.map(element => (
                         <TaskCard setTaskDone={element.id} key={element.id} setDeletedServiceDesk={setDeletedSeviceDesk} oneServiceDesk={element} />
                     ))}

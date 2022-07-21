@@ -62,6 +62,15 @@
     }
 
     .task-slider-tasks-group {
-        width: 75%;
+        display: flex;
+        height: 33%;
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        white-space: nowrap;
+        margin-bottom: 5rem;
+        border-top-left-radius: .4rem;
+        border-top-right-radius: .4rem;
     }
 }

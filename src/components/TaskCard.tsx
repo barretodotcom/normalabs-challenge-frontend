@@ -23,10 +23,9 @@ export default function TaskCard({ oneServiceDesk, setDeletedServiceDesk }: ITas
     const finalDate = new Date(oneServiceDesk.finalDate);
     const serviceStatusColor = oneServiceDesk.status.toLowerCase() == "à fazer" ? "#ffdf51" : oneServiceDesk.status.toLowerCase() == 'feito' ? "rgb(141, 241, 118)" : "rgb(106, 163, 236)";
     const serviceStatusBorder = oneServiceDesk.status.toLowerCase() == "à fazer" ? "#e0b700" : oneServiceDesk.status.toLowerCase() == 'feito' ? "rgb(141, 241, 118)" : "rgb(106, 163, 236)";
-    const serviceStatusText = oneServiceDesk.status.toLowerCase() == "à fazer" ? "#d3ac00" : oneServiceDesk.status.toLowerCase() == 'feito' ? "rgb(141, 241, 118)" : "rgb(34, 73, 122)";
+    const serviceStatusText = oneServiceDesk.status.toLowerCase() == "à fazer" ? "#d3ac00" : oneServiceDesk.status.toLowerCase() == 'feito' ? "rgb(80, 156, 62)" : "rgb(34, 73, 122)";
     async function handlesetTaskDone(element: any, status: string) {
-        console.log(element.id)
-        await setTaskStatus(element.id, status);
+        await setTaskStatus(element, status);
     }
     return (
         <div style={{ borderTop: `3.5px solid ${serviceStatusColor}` }} className="task-card-container task-shadow">
