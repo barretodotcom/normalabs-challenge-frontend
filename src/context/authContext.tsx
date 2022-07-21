@@ -83,6 +83,7 @@ export const AuthProvider: React.FC<Props> = ({ children }: Props) => {
             localStorage.setItem("user", JSON.stringify(user));
             localStorage.setItem("token", response.data.token);
             localStorage.setItem('type', 'user')
+            api.defaults.headers.common.authorization = `Bearer ${response.data.token}`
             setUser(user);
             setAvatar(`${API_URL}/files/${user.avatar}`);
             setServiceDesk(user.serviceDesk);
