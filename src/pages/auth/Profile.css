@@ -14,7 +14,7 @@
 .profile-container {
     background-color: #ff9000;
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     flex-direction: column;
     width: 100%;
 }
@@ -106,9 +106,6 @@
 }
 
 @media (max-width:650px) {
-    .profile-container {
-        flex-wrap: wrap;
-    }
 
     .profile-card {
         width: 100%;
@@ -139,4 +136,11 @@
     .welcome-container {
         padding-inline: 5%;
     }
+
+    .profile-all-tasks-generator {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
 }

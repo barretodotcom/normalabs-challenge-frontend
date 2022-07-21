@@ -42,7 +42,7 @@ export default function Profile() {
                 <Card />
                 <Tasks />
             </div>
-            {serviceDesk && (serviceDesk as []).length > 0 ?
+            {serviceDesk && (serviceDesk as []).length ?
                 <div className='profile-all-tasks'>
                     <div className='profile-all-tasks-title'>
                         <h1 className='poppins'>Todas as suas tarefas:</h1>
