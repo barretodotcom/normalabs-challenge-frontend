@@ -63,9 +63,10 @@
 
     .task-slider-tasks-group {
         display: flex;
-        height: 33%;
+        height: 30rem;
         width: 100%;
         flex-direction: column;
+        flex-wrap: wrap;
         overflow-x: auto;
         overflow-y: hidden;
         scroll-behavior: smooth;
@@ -87,5 +88,10 @@
         border-top-left-radius: .4rem;
         border-top-right-radius: .4rem;
         margin-bottom: 2rem;
+    }
+
+    #slider-task {
+        display: flex;
+        flex-direction: row;
     }
 }

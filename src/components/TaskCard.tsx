@@ -30,7 +30,7 @@ export default function TaskCard({ oneServiceDesk, setDeletedServiceDesk }: ITas
     return (
         <div style={{ borderTop: `3.5px solid ${serviceStatusColor}` }} className="task-card-container task-shadow">
             <div className='task-card-container-card-title'>
-                <h1 className='poppins'>Tarefa Nº {(serviceDesk?.indexOf(oneServiceDesk) as number) + 1}</h1>
+                <h1 className='poppins'>Tarefa</h1>
                 <AiFillDelete
                     cursor={"pointer"}
                     onClick={() => setDeletedServiceDesk(oneServiceDesk)}
